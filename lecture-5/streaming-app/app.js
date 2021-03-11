@@ -4,7 +4,6 @@ const fs = require('fs');
 
 app
   .get('/', (req, res) => {
-    // what is __dirname?
     res.sendFile(__dirname + '/index.html')
   })
   .get('/video', (req, res) => {
