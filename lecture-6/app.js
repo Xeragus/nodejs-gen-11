@@ -7,6 +7,7 @@ let countries = [];
 
 app
   .get('/countries', (req, res) => {
+    console.log('query params: ', req.query)
     res.send(countries);
   })
   .post('/countries', (req, res) => {
