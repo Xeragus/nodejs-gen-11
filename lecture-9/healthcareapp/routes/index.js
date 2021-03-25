@@ -1,12 +1,24 @@
 var express = require('express');
 var router = express.Router();
+const Doctor = require('../models/doctor');
 
 router
     .get('/', (req, res) => {
       res.render('index', { title: 'Express' });
     })
     .get('/doctors', async (req, res) => {
-      res.render('doctors/index', { doctors: [] })
+      const doctors = await Doctor.find();
+
+      res.render('doctors/index', { doctors: doctors });
+    })
+    .get('/doctors/create', (req, res) => {
+      res.render('doctors/create');
+    })
+    .post('/doctors', async (req, res) => {
+      const doctor = new Doctor(req.body)
+      await doctor.save()
+
+      res.redirect('/doctors')
     })
 
 module.exports = router;

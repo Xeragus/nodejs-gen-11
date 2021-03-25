@@ -1,4 +1,5 @@
 <h3>Doctors</h3>
+<a href="/doctors/create" class="btn btn-primary">Add</a>
 <table class="table table-hover">
   <thead>
     <tr>
@@ -9,23 +10,13 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">83748-11</th>
-      <td>Mark Otto</td>
-      <td>General Medicine</td>
-      <td>Skopje</td>
-    </tr>
-    <tr>
-      <th scope="row">928304-05</th>
-      <td>Jacob Thornton</td>
-      <td>Neuro</td>
-      <td>Skopje</td>
-    </tr>
-    <tr>
-      <th scope="row">3284378-22</th>
-      <td>Larry the Bird</td>
-      <td>Nisto</td>
-      <td>Bitola</td>
-    </tr>
+    <% doctors.forEach(doctor => { %>
+      <tr>
+        <th scope="row"><%= doctor.licence_number %></th>
+        <td><%= doctor.full_name %></td>
+        <td><%= doctor.specialization %></td>
+        <td><%= doctor.city %></td>
+      </tr>
+    <% }) %>
   </tbody>
 </table>
