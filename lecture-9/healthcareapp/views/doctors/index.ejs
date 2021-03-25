@@ -7,6 +7,7 @@
       <th scope="col">Name</th>
       <th scope="col">Specialization</th>
       <th scope="col">City</th>
+      <th scope="col">Actions</th>
     </tr>
   </thead>
   <tbody>
@@ -16,6 +17,9 @@
         <td><%= doctor.full_name %></td>
         <td><%= doctor.specialization %></td>
         <td><%= doctor.city %></td>
+        <td>
+          <a href="/doctors/<%= doctor._id %>" class="btn btn-warning">Edit</a>
+        </td>
       </tr>
     <% }) %>
   </tbody>
