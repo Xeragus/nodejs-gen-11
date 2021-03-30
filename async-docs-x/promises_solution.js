@@ -30,7 +30,7 @@ const createDoctor = doctor => {
 
       resolve(doctor);
     }, 2000);
-  })
+  });
 };
 
 createDoctor({
