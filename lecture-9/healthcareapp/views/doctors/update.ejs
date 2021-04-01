@@ -1,3 +1,4 @@
+<%- include('../partials/header') %>
 <% if (typeof error != 'undefined') { %>
   <div class="alert alert-danger" role="alert">
     <%= error %>
@@ -26,3 +27,4 @@
   </div>
   <button type="submit" class="btn btn-primary">Update</button>
 </form>
+<%- include('../partials/footer') %>

@@ -21,7 +21,8 @@ const doctorSchema = mongoose.Schema({
   specialization: {
     type: String,
     required: ['Specialization is a required field']
-  }
+  },
+  //  
 });
 
 module.exports = mongoose.model('Doctor', doctorSchema);

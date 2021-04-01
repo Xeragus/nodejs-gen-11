@@ -4,11 +4,11 @@ const patientSchema = mongoose.Schema({
   ssn: {
     type: String,
     required: ['SSN is a required field'],
-    unique: true,
-    validate: {
-      validator: value => /^[0-9]{13}$/.test(value),
-      message: props => `The ssn ${props.value} is invalid`
-    }
+    // unique: true,
+    // validate: {
+    //   validator: value => /^[0-9]{13}$/.test(value),
+    //   message: props => `The ssn ${props.value} is invalid`
+    // }
   },
   full_name: {
     type: String,
@@ -25,15 +25,19 @@ const patientSchema = mongoose.Schema({
   phone_number: {
     type: String,
     required: ['Phone number is a required field'],
-    unique: true,
-    validate: {
-      validator: value => /^[0-7]{3}[0-9]{6}$/.test(value),
-      message: props => `The phone number ${props.value} is invalid`
-    }
+    // unique: true,
+    // validate: {
+    //   validator: value => /^[0-7]{3}[0-9]{6}$/.test(value),
+    //   message: props => `The phone number ${props.value} is invalid`
+    // }
   },
   city: {
     type: String,
     required: ['City is a required field']
+  },
+  doctor: {
+    type: mongoose.Types.ObjectId,
+    ref: 'Doctor'
   }
 });
 

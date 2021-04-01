@@ -1,4 +1,5 @@
-<body style="background-color: rgb(230, 230, 230)">
+<%- include('../partials/header') %>
+<div style="background-color: rgb(230, 230, 230)">
   <% if (typeof error != 'undefined') { %>
   <div class="alert alert-danger" role="alert"><%= error %></div>
   <% } %>
@@ -52,4 +53,5 @@
       </form>
     </div>
   </div>
-</body>
+</div>
+<%- include('../partials/footer') %>
