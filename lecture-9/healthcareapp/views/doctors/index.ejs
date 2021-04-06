@@ -21,12 +21,9 @@
           <td><%= doctor.specialization %></td>
           <td><%= doctor.city %></td>
           <td>
-            <a href="/doctors/<%= doctor._id %>" class="btn btn-warning">
-              Edit
-            </a>
-            <button type="button" onclick="deleteDoctor(`<%= doctor._id %>`)" class="btn btn-danger">
-              Delete
-            </button>
+            <a href="/doctors/<%= doctor._id %>" class="btn btn-warning">Edit</a>
+            <button type="button" onclick="deleteDoctor(`<%= doctor._id %>`)" class="btn btn-danger">Delete</button>
+            <a href="/doctors/<%= doctor._id %>/patients" class="btn btn-secondary">Patients</a>
           </td>
         </tr>
         <% }) %>

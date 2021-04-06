@@ -22,7 +22,10 @@ const doctorSchema = mongoose.Schema({
     type: String,
     required: ['Specialization is a required field']
   },
-  //  
+  patients: [{
+    type: mongoose.Types.ObjectId,
+    ref: 'Patient'
+  }]
 });
 
 module.exports = mongoose.model('Doctor', doctorSchema);
